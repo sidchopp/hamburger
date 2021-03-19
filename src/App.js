@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import 'semantic-ui-css/semantic.min.css'
+import './App.css'
 
 function App() {
+  const [showMenu, setShowMenu] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={showMenu ? 'wrapper-menu open' : 'wrapper-menu'} onClick={() => { setShowMenu(!showMenu) }} >
+      <div className="line-menu half start"></div>
+      <div className="line-menu"></div>
+      <div className="line-menu half end"></div>
     </div>
+
   );
 }
 
